@@ -1,0 +1,18 @@
+﻿@using ForumDemo.Models.DTO;
+@model List<ForumThemeDto>
+@{
+    ViewBag.Title = "Forum";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("Create new theme", "Create")
+
+<ul class="list-group">
+    @foreach (var theme in Model)
+    {
+        <li class="list-group-item">
+            @theme.Title (@theme.Description) - @Html.ActionLink("Detail", "Detail", new { id = theme.Id })
+        </li>
+    }
+</ul>

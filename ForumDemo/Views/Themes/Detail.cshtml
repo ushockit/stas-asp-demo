@@ -1,0 +1,30 @@
+﻿@using ForumDemo.Models.DTO
+@using Microsoft.AspNet.Identity
+@model ForumThemeDto
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>@Model.Title</h2>
+
+@Html.ActionLink("Add message", "AddMessage", new { themeId = Model.Id })
+
+<h3>Messages</h3>
+<ul class="list-group">
+    @foreach (var msg in Model.Messages)
+    {
+        <li class="list-group-item">
+            @if (@User.Identity.GetUserId().Equals(msg.PublisherId))
+            {
+                <span>@Html.ActionLink(msg.Text, "ModifyMessage", "ThemeMessages", new { msgId = msg.Id, themeId = msg.ThemeId }, null)</span>
+            }
+            else
+            {
+                <span>@msg.Text</span>
+            }
+        </li>
+    }
+</ul>
+
+@Html.ActionLink("Back", "Index")
+
