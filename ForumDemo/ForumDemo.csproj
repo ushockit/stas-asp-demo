@@ -195,8 +195,10 @@
     <Compile Include="Models\EF\Repositories\ThemeMessagesRepository.cs" />
     <Compile Include="Models\EF\Repositories\ForumThemesRepository.cs" />
     <Compile Include="Models\EF\Repositories\IRepository.cs" />
+    <Compile Include="Models\Filters\ConfirmEmailAttribute.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Utils\ApplicationConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -262,6 +264,7 @@
     <Content Include="Views\Themes\Create.cshtml" />
     <Content Include="Views\Themes\AddMessage.cshtml" />
     <Content Include="Views\ThemeMessages\ModifyMessage.cshtml" />
+    <Content Include="Views\Account\ConfirmEmailInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,7 +300,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49682</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44303/</IISUrl>
+          <IISUrl>http://localhost:49682/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:49682/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

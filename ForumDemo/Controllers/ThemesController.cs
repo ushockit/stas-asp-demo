@@ -15,6 +15,7 @@ namespace ForumDemo.Controllers
     public class ThemesController : Controller
     {
         ForumThemesService themesService = new ForumThemesService();
+
         public async Task<ActionResult> Index()
         {
             return View(await themesService.GetAllThemes());
@@ -69,7 +70,7 @@ namespace ForumDemo.Controllers
             }
             catch(NotUserThemeException)
             {
-                return new HttpNotFoundResult("It`s not your theme");
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest, "It`s not your theme");
             }
         }
 

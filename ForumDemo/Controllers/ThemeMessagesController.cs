@@ -18,7 +18,7 @@ namespace ForumDemo.Controllers
         {
             if (msgId is null || themeId is null)
             {
-                return HttpNotFound();
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
             }
             try
             {
